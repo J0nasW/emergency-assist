@@ -1,0 +1,12 @@
+export const dialogflowConfig = {
+    "type": "service_account",
+    "project_id": "emergencyassist-v1-plakfq",
+    "private_key_id": "39a2fdb1264904170558e7d9ad1dcea0dc96e2c4",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCNXiuw7s9WOZB5\nmMtXKzagRjNFrDUkW3F79Vqw7JzUXScz3wmOx7N/wtFsWBn7NDUXESBnh0IV47nm\n7LxyCvBV1F1emBDENUoh+W2hRzGhvHfWQJdReEvohhPnvoOsJNyz6Ha36ceGuane\nOg2qg+w90ADcKkUssX+IvbSWwZUbenlfU8jPFIjSjCGufc6XAuWB7IeGxEDevGoj\nqE/IO5xQf+n9gSnQ3eoelILzvbXGZeW4THINmJ2JmlBOc/wk9qm0A6lgVsOX8ePJ\nhBRvzBdnxg0xfVymeJCkEqqC9sVkdunreNPK7bWAjLSSVxPYSDmeSC5zmh8uTRLh\nKcUpgsUdAgMBAAECggEACO4aNJ4n+aJ/b82js1u0OBnUetH8SxHotbkjyQ8v//1A\nxkwlpSqUekgIT9UH58sI5dkL3ZED2cX4fsUqc/TLcPc44l/DmAq6u7HZ3PPWR4kp\niR6sQGCo64/EBEy6sh44/+IPKnfUMLyb5avFTxBwKl5wSM11xbM9DcUCuk7mYvrN\n+1SHjKycSMAAlFigPp5PdCK6glmP8vZ/r2N23YWqVVQ5fvOS38zCT3RI2J+TjVRs\nWRdin6OLCoqgco1kFhzV5jH+lUZUyShoDb4jFk+rhpLkMZspTpeL+Uoqu3230MUT\n0NgRhzzt1g2vLhnUAg8bVLNwB6/5Ltvl6jmxYxj1GQKBgQDFeKm9YbVxhXKqJyoZ\nYXoMEBouWKp2fxiqolJLjnQ5nipuJPZ3fXJo6igDxl5Gv4vgkhlgQNgElyisGn2i\n4zUolyYCcKJD2vx3Q9K2dMc9nM2Gn/8Kvr/gPlFuujdtPo5eFaCqAIt7jOUGxVJM\nFpMVMv4XBwQsPqE9R1/iHjuUOQKBgQC3RJldzAYQU855bd5MrzC3h8XZLDMyhV+t\nT75pnlwnVq7JhyuYz3oxyalaAOF1/T4fitsOmnlEhNPUNVUsGaTaO8E8ekWIrezx\nvvfGHgNZ2j1G6ZbVWDo5ImPiUnDdUego3Bor/MiSg4R6rhrVeyzmzNS7MRPl+JtX\n0RBw69/gBQKBgB8SRWMPJMWgAdLUJsOnmtSbFAOG4AuVJAR1Vg2ddJw8TuDV4BId\nIwtvDKzLYbowGYpUcrm6ekL+pd+uq2Yd6hdg8RIhNucGZgM+IMGkzlTbf1tXgYHn\nUbmvFJEfq+j8ltom/QjC3S+rk73k/nYKd0o2o9RrvjRYBnbl7ChgKW/BAoGAMJlF\nXkUzOnMu5q6G66jtb03W3m9FKFmL9KaX5OQ0pc3rzc9FdWFXkwpaGV7watx789tb\nmbTHAa+DiNuXuXkXaTO9W29FLyiIE9dDV0swMkyYQUzCTdL2pZ4EBMk92sLUoLk1\nS4LeIVQ09l9jCEeAsbeRlg4+q5ZQg2oSRQ+Xr40CgYAlUia9IPnhrDtndOfdZoI+\n3wuMm3I9S8xDvCtfP5UABKzKbHR7mrGHyWz4Y48YyzEZ0j3O0n2E74BA3N+BV3YQ\ny0kbM9E7drpjKggM8KzAL7Z2DjzS9n9MbJs+xHIAUFV5RABAy1hC/M4MGClXcgbI\nYgXujGCn2BFy1dR43+PMcg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "dialogflow-uyqhta@emergencyassist-v1-plakfq.iam.gserviceaccount.com",
+    "client_id": "116728265497825690061",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-uyqhta%40emergencyassist-v1-plakfq.iam.gserviceaccount.com"
+  }

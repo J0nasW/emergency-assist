@@ -6,7 +6,12 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 
 import {colors, dimensions} from '../styles/base.js';
 
-function Emergency(props) {
+import { GiftedChat } from 'react-native-gifted-chat';
+import { Dialogflow_V2 } from 'react-native-dialogflow';
+import { dialogflowConfig } from '../../env';
+
+function Chat(props) {
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -56,175 +61,17 @@ function Emergency(props) {
       </View>
 
       <View style={styles.section_group}>
-        <Text style={styles.section}>Du hast einen Notfall:</Text>
+        <Text style={styles.section}>Chat:</Text>
       </View>
 
-      <View style={styles.big_button_group}>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("Home")}
-          style={styles.big_button_1}
-        >
-          <View style={styles.big_button_image}>
-            <Image
-              source={require("../assets/images/call.png")}
-              resizeMode="contain"
-              style={styles.big_button_image_prop}
-            ></Image>
-            <View style={styles.big_button_header_group}>
-              <Text style={styles.big_button_header}>Ruf uns an</Text>
-              <Text style={styles.big_button_p}>Powered by EA VoiceAI</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.big_button_group}>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("Chat")}
-          style={styles.big_button_2}
-        >
-          <View style={styles.big_button_image}>
-            <Image
-              source={require("../assets/images/Chat.png")}
-              resizeMode="contain"
-              style={styles.big_button_image_prop}
-            ></Image>
-            <View style={styles.big_button_header_group}>
-              <Text style={styles.big_button_header_2}>Erzähl uns,</Text>
-              <Text style={styles.big_button_p_2}>was dir fehlt</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.section_group_row}>
-        <Text style={styles.section}>Notaufnahmen:</Text>
-        <View style={styles.section_filler}></View>
-        <Text style={styles.section_option}>Alle anzeigen</Text>
-      </View>
-
-      <View style={styles.tile_group_2x2}>
-        <View style={styles.tile_group_1x2}>
-          <View style={styles.tile_l}>
-            <View style={styles.button3Filler}></View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("")}
-              style={styles.button3}
-            >
-              <Image
-                source={require("../assets/images/akh.png")}
-                resizeMode="contain"
-                style={styles.image9}
-              ></Image>
-              <Text style={styles.akHarburg}>AK{"\n"}Harburg</Text>
-              <View style={styles.ellipseRow}>
-                <Svg viewBox="0 0 20 20" style={styles.ellipse}>
-                  <Ellipse
-                    strokeWidth={0}
-                    fill="rgba(31,189,161,1)"
-                    cx={10}
-                    cy={10}
-                    rx={10}
-                    ry={10}
-                  ></Ellipse>
-                </Svg>
-                <View style={styles.echtzeitTrackingStack}>
-                  <Text style={styles.echtzeitTracking}>
-                    Echtzeit Tracking:
-                  </Text>
-                  <Text style={styles.geringeAuslastung}>
-                    Geringe Auslastung
-                  </Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.tile_r}>
-            <View style={styles.button10Stack}>
-              <TouchableOpacity
-                onPress={() => props.navigation.navigate("")}
-                style={styles.button10}
-              >
-                <Image
-                  source={require("../assets/images/helios.png")}
-                  resizeMode="contain"
-                  style={styles.image16}
-                ></Image>
-                <View style={styles.ellipse4Row}>
-                  <Svg viewBox="0 0 20 20" style={styles.ellipse4}>
-                    <Ellipse
-                      strokeWidth={0}
-                      fill="rgba(251,102,96,1)"
-                      cx={10}
-                      cy={10}
-                      rx={10}
-                      ry={10}
-                    ></Ellipse>
-                  </Svg>
-                  <View style={styles.echtzeitTracking4Stack}>
-                    <Text style={styles.echtzeitTracking4}>
-                      Echtzeit Tracking:
-                    </Text>
-                    <Text style={styles.mittlereAuslastung}>
-                      Mittlere Auslastung
-                    </Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
-              <Text style={styles.heliosMariaHilf}>
-                Helios{"\n"}Maria Hilf ..
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.tile_group_1x2}>
-          <View style={styles.tile_l}>
-            <View style={styles.button12Filler}></View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("")}
-              style={styles.button12}
-            >
-              <Image
-                source={require("../assets/images/uke.png")}
-                resizeMode="contain"
-                style={styles.image17}
-              ></Image>
-              <Text style={styles.ukeHamburg}>UKE{"\n"}Hamburg</Text>
-              <View style={styles.ellipse6Row}>
-                <Svg viewBox="0 0 20 20" style={styles.ellipse6}>
-                  <Ellipse
-                    strokeWidth={0}
-                    fill="rgba(189,31,31,1)"
-                    cx={10}
-                    cy={10}
-                    rx={10}
-                    ry={10}
-                  ></Ellipse>
-                </Svg>
-                <View style={styles.echtzeitTracking7Stack}>
-                  <Text style={styles.echtzeitTracking7}>
-                    Echtzeit Tracking:
-                  </Text>
-                  <Text style={styles.hoheAuslastung}>Hohe Auslastung</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.tile_r}>
-            <View style={styles.button11Filler}></View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("")}
-              style={styles.button11}
-            >
-              <Image
-                source={require("../assets/images/map_b.png")}
-                resizeMode="contain"
-                style={styles.image18}
-              ></Image>
-              <Text style={styles.zurKarte}>Zur Karte</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <GiftedChat
+          messages={onSend.state.messages}
+          onSend={messages => onSend(messages)}
+          user={{
+            _id: 1
+          }}
+        />
       </View>
       
     </SafeAreaView>
@@ -794,4 +641,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Emergency;
+export default Chat;

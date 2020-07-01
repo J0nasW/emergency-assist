@@ -2,66 +2,177 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
+  SafeAreaView,
   StatusBar,
   Image,
   Text,
   TouchableOpacity
 } from "react-native";
-import { Center } from "@builderx/utils";
+
+import {colors, dimensions} from '../styles/base.js';
 
 function Login(props) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar
         animated
         barStyle="light-content"
         backgroundColor="rgba(29,75,115,1)"
       />
-      <View style={styles.group3Stack}>
-        <Center horizontal>
-          <View style={styles.group3}>
-            <View style={styles.rectStack}>
-              <View style={styles.rect}>
-                <Image
-                  source={require("../assets/images/Emergency_Assist_web1.png")}
-                  resizeMode="contain"
-                  style={styles.image2}
-                ></Image>
-                <View style={styles.image2Filler}></View>
-                <Text style={styles.deinhelfer}>
-                  Dein Helfer, wenn es drauf{"\n"}an kommt.
-                </Text>
-              </View>
-              <Text style={styles.emergencyassisttitel}>
-                Hey, ich bin dein{"\n"}Emergency Assist
-              </Text>
-            </View>
-          </View>
-        </Center>
-        <View style={styles.group4}>
-          <TouchableOpacity /* Conditional navigation not supported at the moment */
-            onPress={() => props.navigation.navigate("Home")}
-            style={styles.button1}
-          >
-            <Image
-              source={require("../assets/images/print1.png")}
-              resizeMode="contain"
-              style={styles.image1}
-            ></Image>
-          </TouchableOpacity>
+      
+      <View style={styles.bg_group}>
+        <View style={styles.rect}>
+          <Image
+            source={require("../assets/images/Emergency_Assist_web1.png")}
+            resizeMode="contain"
+            style={styles.ea_logo}
+          ></Image>
+          <Text style={styles.ea_title}>
+            Hey, ich bin dein{"\n"}Emergency Assist
+          </Text>
+          <Text style={styles.ea_paragraph}>
+            Dein Helfer, wenn es drauf{"\n"}an kommt.
+          </Text>
         </View>
       </View>
-      <View style={styles.group3StackFiller}></View>
+
+      <View style={styles.fingerprint_group}>
+        <TouchableOpacity /* Conditional navigation not supported at the moment */
+          onPress={() => props.navigation.navigate("Home")}
+          style={styles.fingerprint_button}
+        >
+          <Image
+            source={require("../assets/images/print1.png")}
+            resizeMode="contain"
+            style={styles.fingerprint_image}
+          ></Image>
+        </TouchableOpacity>
+      </View>
+
       <Text style={styles.einstellungen}>Einstellungen</Text>
-    </View>
+
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+
+  // Generalizing
+
   container: {
     flex: 1,
-    backgroundColor: "rgba(29,75,115,1)"
+    backgroundColor: colors.ea_blue
   },
+
+  // Box
+
+  bg_box_group: {
+    height: 600,
+    marginTop: 100,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  bg_group: {
+    height: 450,
+    width: 300,
+    marginTop: 100,
+    justifyContent: "center",
+    alignSelf: "center",
+  },
+
+  rect: {
+    height: 500,
+    backgroundColor: "rgba(255,255,255,1)",
+    width: 300,
+    borderRadius: 28,
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      height: 10,
+      width: 10
+    },
+    elevation: 90,
+    shadowOpacity: 0.53,
+    shadowRadius: 30,
+    left: 0,
+    top: 0
+  },
+
+  ea_logo: {
+    width: 200,
+    height: 200,
+    marginTop: 25,
+    alignSelf: "center"
+  },
+
+  ea_title: {
+    fontFamily: "poppins-600",
+    color: colors.ea_blue,
+    textAlign: "center",
+    fontSize: 28,
+    lineHeight: 30,
+    width: 300,
+    height: 70,
+    marginTop: 30,
+    alignSelf: "center"
+  },
+
+  ea_paragraph: {
+    fontFamily: "poppins-300",
+    color: "rgba(0,0,0,1)",
+    textAlign: "center",
+    fontSize: 18,
+    lineHeight: 20,
+    width: 275,
+    height: 60,
+    marginTop: 10,
+    alignSelf: "center"
+  },
+
+  fingerprint_group: {
+    height: 115,
+    marginTop: 0,
+    justifyContent: "center",
+    alignSelf: "center",
+  },
+
+  fingerprint_button: {
+    height: 99,
+    backgroundColor: "rgba(32,189,161,1)",
+    borderRadius: 28,
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      height: 10,
+      width: 10
+    },
+    elevation: 90,
+    shadowOpacity: 0.53,
+    shadowRadius: 30,
+    width: 125,
+    justifyContent: "center",
+    alignSelf: "center"
+  },
+
+  fingerprint_image: {
+    width: 58,
+    height: 58,
+    alignSelf: "center"
+  },
+
+  einstellungen: {
+    fontFamily: "poppins-300",
+    position: "absolute",
+    bottom: 0,
+    color: "rgba(255,255,255,1)",
+    textAlign: "center",
+    fontSize: 14,
+    lineHeight: 28,
+    marginBottom: 15,
+    alignSelf: "center"
+  },
+
+  
   group3: {
     height: 534,
     position: "absolute",
@@ -159,15 +270,7 @@ const styles = StyleSheet.create({
   group3StackFiller: {
     flex: 1
   },
-  einstellungen: {
-    fontFamily: "poppins-300",
-    color: "rgba(255,255,255,1)",
-    textAlign: "center",
-    fontSize: 14,
-    lineHeight: 28,
-    marginBottom: 22,
-    alignSelf: "center"
-  }
+  
 });
 
 export default Login;

@@ -1,13 +1,55 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image, FlatList, TouchableOpacity } from 'react-native';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { AppLoading } from "expo";
-import { Ionicons } from '@expo/vector-icons';
 import * as Font from "expo-font";
 
-import Navigator from "./src/routes/Drawer";
+import { Dialogflow_V2 } from 'react-native-dialogflow';
+import { dialogflowConfig } from './env';
+
+import Home from "./src/screens/Home";
+import Emergency from "./src/screens/Emergency";
+import Identity from "./src/screens/Identity";
+import Login from "./src/screens/Login";
+import Chat from "./src/screens/Chat";
+
+import {  LocalAuthentication } from 'expo';
+
+function fingerprint() {
+  hardware = LocalAuthentication.hasHardwareAsync();
+  console.error("yes");
+  return (hardware);
+} // Still in Development...
+
+// CHATBOT
+
+
+const DrawerNavigation = createDrawerNavigator({
+  Login: Login,
+  Home: Home,
+  Emergency: Emergency,
+  Chat: Chat,
+  Identity: Identity
+});
+
+const StackNavigation = createStackNavigator(
+  {
+    DrawerNavigation: {
+      screen: DrawerNavigation
+    },
+    Login: Login,
+    Home: Home,
+    Emergency: Emergency,
+    Chat: Chat,
+    Identity: Identity
+  },
+  {
+    headerMode: "none"
+  }
+);
+
+const AppContainer = createAppContainer(StackNavigation);
 
 function App() {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -20,7 +62,7 @@ function App() {
       />
     );
   } else {
-    return isLoadingComplete ? <Navigator /> : <AppLoading />;
+    return isLoadingComplete ? <AppContainer /> : <AppLoading />;
   }
 }
 
