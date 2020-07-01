@@ -1,0 +1,1 @@
+{"short_name":"EA","name":"Emergency Assist","icons":[{"src":"/assets/img/favicon/android.png","type":"image/png","sizes":"192x192"},{"src":"/assets/img/favicon/android_splash.png","type":"image/png","sizes":"512x512"}],"start_url":"/index.html","background_color":"rgb(255,255,255)","theme_color":"#1d4b73","display":"fullscreen","orientation":"portrait"}
