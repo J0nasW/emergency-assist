@@ -1,4 +1,4 @@
-# :hospital: Emergency Assist on GitHub
+# Emergency Assist Web Dashboard
 Accenture Campus Innovation Challenge 2020
 
 This GitHub-Repository contains all the Code written for the Project Emergency Assist.

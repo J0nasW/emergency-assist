@@ -1,14 +1,8 @@
-# Multi Screen Starter with Expo
+# Emergency Assist Mobile React App
 
 [![made with expo](https://img.shields.io/badge/MADE%20WITH%20EXPO-000.svg?style=for-the-badge&logo=expo&labelColor=4630eb&logoWidth=20)](https://github.com/expo/expo) [![supports iOS and Android](https://img.shields.io/badge/Platforms-Native-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo)
 
-[![follow @calebnance](https://img.shields.io/twitter/follow/calebnance.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray)](https://twitter.com/calebnance)
-
-<p align="center">
-  <img src="screenshots/screenshare-6.png?raw=true" />
-</p>
-
-### Out of the Box
+### Features
 
 - Expo SDK 36
 - React Navigation v4 & Theme Support!
@@ -82,37 +76,3 @@ Run Project Locally: `expo start` or `yarn dev`
   - `.eslintrc`
   - `.prettierignore`
   - `.prettierrc`
-
-## assets
-
-- [black rabbit icon](https://thenounproject.com/search/?q=rabbit&i=1211060) was bought (royalty-free license)
-- SVG Icons from [icomoon](https://icomoon.io)
-
-## device learnings
-
-- **ios:** The notch on iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max is **30pt** from top
-
-## demo and release notes
-
-### version: 0.0.2 (current)
-
-- upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
-- upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
-- upgraded to React Navigation v4 ([api](https://reactnavigation.org/docs/en/api-reference.html) | [docs](https://reactnavigation.org/docs/en/getting-started.html))
-- upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
-- React Navigation Theme Support / Example Usage ([themes docs](https://reactnavigation.org/docs/en/themes.html))
-- upgraded to React Navigation v3 ([api](https://reactnavigation.org/docs/en/3.x/api-reference.html) | [docs](https://reactnavigation.org/docs/en/3.x/getting-started.html))
-
-### version: 0.0.1
-
-this starter for a multi screens/stack app is at a good state
-
-- React Navigation v2 ([api](https://reactnavigation.org/docs/en/2.x/api-reference.html) | [docs](https://reactnavigation.org/docs/en/2.x/getting-started.html))
-- preloading/caching local images (with splash loading screen)
-- utility checker for the notch: iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
-- simple jest tests
-- svg usage
-
-<p align="left">
-  <img src="screenshots/multi-screens_0.0.2.gif?raw=true" width="320" />
-</p>
