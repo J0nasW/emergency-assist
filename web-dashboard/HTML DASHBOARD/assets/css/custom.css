@@ -1,0 +1,10 @@
+.bg-gradient-custom {
+  background-color: #1d4b73 !important;
+  background-image: linear-gradient(180deg,#1f5a8e 10%,#1d4b73);
+  background-size: cover;
+}
+
+.text-primary {
+  color: #1d4b73!important;
+}
+

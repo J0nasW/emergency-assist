@@ -1,25 +1,39 @@
 {
   "expo": {
     "name": "Emergency Assist",
-    "slug": "emergencyassist",
+    "description": "Dein Emergency Assist für ein smartes Notfallmanagement.",
+    "scheme": "expomultiscreenstarter",
+    "slug": "emergencyassist-v2",
     "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "version": "0.0.2",
     "platforms": [
-      "ios",
       "android",
+      "ios",
       "web"
     ],
-    "version": "1.0.0",
+    "githubUrl": "https://github.com/J0nasW/emergency-assist",
     "orientation": "portrait",
+    "primaryColor": "#1D4B73",
+    "icon": "src/assets/icon.png",
+    "splash": {
+      "backgroundColor": "#1D4B73",
+      "image": "src/assets/splash.png",
+      "resizeMode": "contain"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "ios": {
-      "supportsTablet": true
-    },
+    "assetBundlePatterns": [
+      "src/assets/**/*"
+    ],
     "android": {
       "package": "com.eaproduction.emergencyassist",
-      "versionCode": 1
+      "versionCode": 2
     },
-    "description": ""
+    "ios": {
+      "buildNumber": "0.0.2",
+      "supportsTablet": true
+    }
   }
 }

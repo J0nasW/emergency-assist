@@ -1,89 +1,75 @@
-import React, { useState } from "react";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator } from "react-navigation-drawer";
-import { AppLoading } from "expo";
-import * as Font from "expo-font";
+import React from 'react';
+import { StatusBar, View } from 'react-native';
+import { AppLoading, ScreenOrientation } from 'expo';
+import { Appearance } from 'react-native-appearance';
+import { device, func, gStyle } from './src/constants';
 
-import { Dialogflow_V2 } from 'react-native-dialogflow';
-import { dialogflowConfig } from './env';
+// tab navigator
+import TabNavigator from './src/navigation/TabNavigator';
 
-import Home from "./src/screens/Home";
-import Emergency from "./src/screens/Emergency";
-import Identity from "./src/screens/Identity";
-import Login from "./src/screens/Login";
-import Chat from "./src/screens/Chat";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-import {  LocalAuthentication } from 'expo';
+    this.state = {
+      isLoading: true,
+      theme: 'light'
+    };
 
-function fingerprint() {
-  hardware = LocalAuthentication.hasHardwareAsync();
-  console.error("yes");
-  return (hardware);
-} // Still in Development...
+    // is iPad?
+    if (device.isPad) {
+      ScreenOrientation.allowAsync(
+        ScreenOrientation.Orientation.ALL_BUT_UPSIDE_DOWN
+      );
+    }
 
-// CHATBOT
-
-
-const DrawerNavigation = createDrawerNavigator({
-  Login: Login,
-  Home: Home,
-  Emergency: Emergency,
-  Chat: Chat,
-  Identity: Identity
-});
-
-const StackNavigation = createStackNavigator(
-  {
-    DrawerNavigation: {
-      screen: DrawerNavigation
-    },
-    Login: Login,
-    Home: Home,
-    Emergency: Emergency,
-    Chat: Chat,
-    Identity: Identity
-  },
-  {
-    headerMode: "none"
+    this.updateTheme = this.updateTheme.bind(this);
   }
-);
 
-const AppContainer = createAppContainer(StackNavigation);
+  componentDidMount() {
+    // get system preference
+    const colorScheme = Appearance.getColorScheme();
 
-function App() {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
-  if (!isLoadingComplete) {
+    // if light or dark
+    if (colorScheme !== 'no-preference') {
+      this.setState({
+        theme: colorScheme
+      });
+    }
+  }
+
+  updateTheme(themeType) {
+    this.setState({
+      theme: themeType
+    });
+  }
+
+  render() {
+    const { isLoading, theme } = this.state;
+    const iOSStatusType = theme === 'light' ? 'dark-content' : 'light-content';
+
+    if (isLoading) {
+      return (
+        <AppLoading
+          onFinish={() => this.setState({ isLoading: false })}
+          startAsync={func.loadAssetsAsync}
+        />
+      );
+    }
+
     return (
-      <AppLoading
-        startAsync={loadResourcesAsync}
-        onError={handleLoadingError}
-        onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
+      <View style={gStyle.container[theme]}>
+        <StatusBar barStyle={device.iOS ? iOSStatusType : 'light-content'} />
+
+        <TabNavigator
+          screenProps={{
+            updateTheme: this.updateTheme
+          }}
+          theme={theme}
+        />
+      </View>
     );
-  } else {
-    return isLoadingComplete ? <AppContainer /> : <AppLoading />;
   }
-}
-
-async function loadResourcesAsync() {
-  await Promise.all([
-    Font.loadAsync({
-      "poppins-500": require("./src/assets/fonts/poppins-500.ttf"),
-      "poppins-300": require("./src/assets/fonts/poppins-300.ttf"),
-      "poppins-700": require("./src/assets/fonts/poppins-700.ttf"),
-      "poppins-200": require("./src/assets/fonts/poppins-200.ttf"),
-      "poppins-regular": require("./src/assets/fonts/poppins-regular.ttf"),
-      "poppins-600": require("./src/assets/fonts/poppins-600.ttf")
-    })
-  ]);
-}
-function handleLoadingError(error) {
-  console.warn(error);
-}
-
-function handleFinishLoading(setLoadingComplete) {
-  setLoadingComplete(true);
 }
 
 export default App;
